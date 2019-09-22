@@ -1,0 +1,11 @@
+data ActionStep
+  | ActionStep name :: String
+               Bool
+  | ShortStep actionStep :: ActionStep
+
+ATTR Docs Doc [ level : Int | | ]
+
+attr Every Des
+   syn transformed :: Int, pep :: Bool
+   inh qa :: String
+   chn qw :: Bool

@@ -1,0 +1,451 @@
+[
+  {
+    "type": "attr_declarations",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "new_attr_style",
+          "named": true
+        },
+        {
+          "type": "old_attr_style",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "attr_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attr_declarations",
+          "named": true
+        },
+        {
+          "type": "attr_keyword",
+          "named": true
+        },
+        {
+          "type": "conid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "attr_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "chn_attr_declaration_new_style",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "chn_keyword",
+          "named": true
+        },
+        {
+          "type": "var_type_definitions",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "chn_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "data_alternatives",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "conid",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "data_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "conid",
+          "named": true
+        },
+        {
+          "type": "data_alternatives",
+          "named": true
+        },
+        {
+          "type": "data_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "data_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "field",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "conid",
+          "named": true
+        },
+        {
+          "type": "var_type_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inh_attr_declaration_new_style",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "inh_keyword",
+          "named": true
+        },
+        {
+          "type": "var_type_definitions",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inh_attr_declaration_old_style",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "type",
+          "named": true
+        },
+        {
+          "type": "type_symbol",
+          "named": true
+        },
+        {
+          "type": "varids",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inh_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "new_attr_style",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "chn_attr_declaration_new_style",
+          "named": true
+        },
+        {
+          "type": "inh_attr_declaration_new_style",
+          "named": true
+        },
+        {
+          "type": "syn_attr_declaration_new_style",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "old_attr_style",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "inh_attr_declaration_old_style",
+          "named": true
+        },
+        {
+          "type": "syn_attr_declaration_old_style",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attr_definition",
+          "named": true
+        },
+        {
+          "type": "data_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "syn_attr_declaration_new_style",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "syn_keyword",
+          "named": true
+        },
+        {
+          "type": "var_type_definitions",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "syn_attr_declaration_old_style",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "type",
+          "named": true
+        },
+        {
+          "type": "type_symbol",
+          "named": true
+        },
+        {
+          "type": "varids",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "syn_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "conid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_symbol",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "var_type_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "type",
+          "named": true
+        },
+        {
+          "type": "type_symbol",
+          "named": true
+        },
+        {
+          "type": "varid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var_type_definitions",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "var_type_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "varids",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "varid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "conid",
+    "named": true
+  },
+  {
+    "type": "varid",
+    "named": true
+  },
+  {
+    "type": "uppercase",
+    "named": true
+  },
+  {
+    "type": "lowercase",
+    "named": true
+  },
+  {
+    "type": "ident_letter",
+    "named": true
+  },
+  {
+    "type": "data",
+    "named": false
+  },
+  {
+    "type": "DATA",
+    "named": false
+  },
+  {
+    "type": "attr",
+    "named": false
+  },
+  {
+    "type": "ATTR",
+    "named": false
+  },
+  {
+    "type": "INH",
+    "named": false
+  },
+  {
+    "type": "inh",
+    "named": false
+  },
+  {
+    "type": "SYN",
+    "named": false
+  },
+  {
+    "type": "syn",
+    "named": false
+  },
+  {
+    "type": "CHN",
+    "named": false
+  },
+  {
+    "type": "chn",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "::",
+    "named": false
+  }
+]
