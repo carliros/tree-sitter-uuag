@@ -8,7 +8,18 @@
   },
   "author": "Carlos Gómez",
   "license": "ISC",
+  "engines": {
+    "node": "8.11.4",
+    "yarn": "1.17.3"
+  },
+  "scripts": {
+    "tree-sitter:generate": "./node_modules/.bin/tree-sitter generate",
+    "tree-sitter:parse": "./node_modules/.bin/tree-sitter parse"
+  },
   "dependencies": {
     "nan": "^2.14.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.15.9"
   }
 }

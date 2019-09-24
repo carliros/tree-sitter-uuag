@@ -1,7 +1,12 @@
+Tree-Sitter for UUAG
 
-How to compile and test
-
+How to compile
 ```
-tree-sitter generate
-tree-sitter parse example-file
+yarn install
+```
+
+How to run examples
+```
+yarn run tree-sitter:generate
+yarn run tree-sitter:parse examples/example-file.ag
 ```
