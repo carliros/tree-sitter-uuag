@@ -49,8 +49,11 @@
           "name": "old_attr_style"
         },
         {
-          "type": "SYMBOL",
-          "name": "new_attr_style"
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "new_attr_style"
+          }
         }
       ]
     },

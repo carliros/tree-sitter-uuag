@@ -17,7 +17,7 @@ module.exports = grammar({
 
     attr_declarations: $ => choice(
       $.old_attr_style,
-      $.new_attr_style
+      repeat1($.new_attr_style)
     ),
 
     old_attr_style: $ => seq(
