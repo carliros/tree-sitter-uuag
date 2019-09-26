@@ -7,8 +7,74 @@ module.exports = grammar({
     _elem: $ => choice(
       $.data_definition,
       $.attr_definition,
-      $.type_definition
+      $.type_definition,
+      $.sem_definition
     ),
+
+    sem_definition: $ => seq(
+      $.sem_keyword,
+      $.conid,
+      // TODO attrDecls?
+      repeat($.sem_alternatives)
+    ),
+
+    sem_alternatives: $ => seq(
+      '|',
+      repeat1($.conid),
+      repeat($.sem_impl)
+    ),
+
+    sem_impl: $ => choice(
+      $.attribute,
+      $.local_attribute
+    ),
+
+    attribute: $ => seq(
+      choice($.varid, $.lhs_keyword),
+      repeat1($.attr_impl)
+    ),
+
+    local_attribute: $ => seq(
+      $.loc_keyword,
+      $.local_attr_impl
+    ),
+
+    attr_impl: $ => seq(
+      '.',
+      $.varid,
+      $.assign_symbol,
+      $.expr
+    ),
+
+    local_attr_impl: $ => seq(
+      '.',
+      $.pattern,
+      $.assign_symbol,
+      $.expr
+    ),
+
+    expr: $ => choice(
+      $.code_block
+      // TODO give support to $.layout_code_block
+    ),
+
+    pattern: $ => choice(
+      seq($.conid, repeat($.pattern1)),
+      $.pattern1
+    ),
+
+    pattern1: $ => choice(
+      seq($.varid, optional($.at_pattern1)),
+      seq('(', optional($.pattern_list) ,')'),
+      '_'
+    ),
+
+    at_pattern1: $ => seq(
+      '@',
+      $.pattern1
+    ),
+
+    pattern_list: $ => seq($.pattern, repeat(seq(',', $.pattern))),
 
     type_definition: $ => seq(
       $.type_keyword,
@@ -142,6 +208,8 @@ module.exports = grammar({
 
     attr_keyword: $ => choice('attr', 'ATTR'),
 
+    sem_keyword: $ => choice('sem', 'SEM'),
+
     type_keyword: $ => choice('type', 'TYPE'),
 
     use_keyword: $ => choice('use', 'USE'),
@@ -152,6 +220,12 @@ module.exports = grammar({
 
     chn_keyword: $ => choice('CHN', 'chn'),
 
+    lhs_keyword: $ => 'lhs',
+
+    loc_keyword: $ => 'loc',
+
     type_symbol: $ => choice(':', '::'),
+
+    assign_symbol: $ => choice('=', ':='),
   }
 });

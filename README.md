@@ -74,9 +74,9 @@ dataAlt ::= "|" conid field*
 field ::= varids ":" type
         | conid
 
-semAlt ::= "|" conid+ semDef *
+semAlt ::= "|" conid+ semDef*
 
-semDef ::= (varid | "lhs") attrDef +
+semDef ::= (varid | "lhs") attrDef+
          | "loc" locDef +
 
 attrDef ::= "." varid assign expr

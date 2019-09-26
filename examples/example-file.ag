@@ -13,3 +13,6 @@ ATTR Tree [ | | value USE {+} {0} : Int ]
 
 TYPE Strings = [String]
 type Cadenas = [{String}]
+
+SEM Tree
+  | Bin lhs.result = {Haskell}
