@@ -6,7 +6,17 @@ module.exports = grammar({
 
     _elem: $ => choice(
       $.data_definition,
-      $.attr_definition
+      $.attr_definition,
+      $.type_definition
+    ),
+
+    type_definition: $ => seq(
+      $.type_keyword,
+      $.conid,
+      '=',
+      '[',
+      repeat($.type),
+      ']'
     ),
 
     attr_definition: $ => seq(
@@ -100,7 +110,8 @@ module.exports = grammar({
     ),
 
     type: $ => choice(
-      $.conid //TODO type_definition can be a conid or code block
+      $.conid,
+      $.code_block
     ),
 
     varids: $ => seq(
@@ -130,6 +141,8 @@ module.exports = grammar({
     data_keyword: $ => choice('data', 'DATA'),
 
     attr_keyword: $ => choice('attr', 'ATTR'),
+
+    type_keyword: $ => choice('type', 'TYPE'),
 
     use_keyword: $ => choice('use', 'USE'),
 

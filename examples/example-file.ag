@@ -10,3 +10,6 @@ attr Every Des
    chn qw :: Bool
 
 ATTR Tree [ | | value USE {+} {0} : Int ]
+
+TYPE Strings = [String]
+type Cadenas = [{String}]
