@@ -16,3 +16,21 @@ type Cadenas = [{String}]
 
 SEM Tree
   | Bin lhs.result = {Haskell}
+           .match = {Int}
+         res.des = {String}
+         loc.min    = { min @left.min @right.min }
+         loc.Tree = { min dsds }
+         loc.Tree id = { min dsds }
+         loc.Tree id@id2 = { min dsds }
+         loc.Tree () = { min dsds }
+         loc.Tree (id) = { min dsds }
+         loc.Tree (id@id2) = { min dsds }
+         loc.Tree (id@id2,id) = { min dsds }
+         loc.Tree _ = { min dsds }
+         loc.res = { min dsds }
+         loc.res@res2 = { min dsds }
+         loc.res@(id) = { min dsds }
+         loc.res@(ss, (id)) = { min dsds }
+         loc.res@_ = { min dsds }
+         loc.(id) = { min dsds }
+         loc._ = { min dsds }
