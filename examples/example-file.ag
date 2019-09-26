@@ -8,3 +8,5 @@ attr Every Des
    syn transformed :: Int, pep :: Bool
    inh qa :: String
    chn qw :: Bool
+
+ATTR Tree [ | | value USE {+} {0} : Int ]

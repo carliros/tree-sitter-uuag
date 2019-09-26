@@ -59,9 +59,15 @@ module.exports = grammar({
 
     syn_attr_declaration_old_style: $ => seq(
       $.varids,
-      // TODO optional USE
+      optional($.use_operator),
       $.type_symbol,
       $.type
+    ),
+
+    use_operator: $ => seq(
+      $.use_keyword,
+      $.code_block,
+      $.code_block
     ),
 
     data_definition: $ => seq(
@@ -106,6 +112,15 @@ module.exports = grammar({
 
     varid: $ => /[a-z]+[a-zA-Z0-9_']*/,
 
+    code_block: $ => seq(
+      '{',
+      $.code_block_content,
+      '}'
+    ),
+
+    code_block_content: $ => /[^{}]*/,
+    // TODO unsupported case: ATTR Tree [ | | value USE { {-} } {0} : Int ]
+
     uppercase: $ => /[A-Z]+/,
 
     lowercase: $ => /[a-z]+/,
@@ -115,6 +130,8 @@ module.exports = grammar({
     data_keyword: $ => choice('data', 'DATA'),
 
     attr_keyword: $ => choice('attr', 'ATTR'),
+
+    use_keyword: $ => choice('use', 'USE'),
 
     inh_keyword: $ => choice('INH', 'inh'),
 
