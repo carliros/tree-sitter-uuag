@@ -26,6 +26,31 @@
         {
           "type": "SYMBOL",
           "name": "sem_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "code_block_definition"
+        }
+      ]
+    },
+    "code_block_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "varid"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "code_block"
         }
       ]
     },
@@ -50,27 +75,31 @@
       ]
     },
     "sem_alternatives": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "|"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "conid"
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "|"
+          },
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "SYMBOL",
+              "name": "conid"
+            }
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "sem_impl"
+            }
           }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "sem_impl"
-          }
-        }
-      ]
+        ]
+      }
     },
     "sem_impl": {
       "type": "CHOICE",
@@ -542,24 +571,28 @@
       ]
     },
     "data_alternatives": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "|"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "conid"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "|"
+          },
+          {
             "type": "SYMBOL",
-            "name": "field"
+            "name": "conid"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "field"
+            }
           }
-        }
-      ]
+        ]
+      }
     },
     "field": {
       "type": "CHOICE",

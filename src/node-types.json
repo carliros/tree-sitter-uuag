@@ -152,6 +152,25 @@
     }
   },
   {
+    "type": "code_block_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "code_block",
+          "named": true
+        },
+        {
+          "type": "varid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "data_alternatives",
     "named": true,
     "fields": {},
@@ -496,6 +515,10 @@
       "types": [
         {
           "type": "attr_definition",
+          "named": true
+        },
+        {
+          "type": "code_block_definition",
           "named": true
         },
         {

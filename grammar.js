@@ -8,7 +8,13 @@ module.exports = grammar({
       $.data_definition,
       $.attr_definition,
       $.type_definition,
-      $.sem_definition
+      $.sem_definition,
+      $.code_block_definition
+    ),
+
+    code_block_definition: $ => seq(
+      optional($.varid),
+      $.code_block
     ),
 
     sem_definition: $ => seq(
@@ -18,11 +24,11 @@ module.exports = grammar({
       repeat($.sem_alternatives)
     ),
 
-    sem_alternatives: $ => seq(
+    sem_alternatives: $ => prec.right(seq(
       '|',
       repeat1($.conid),
       repeat($.sem_impl)
-    ),
+    )),
 
     sem_impl: $ => choice(
       $.attribute,
@@ -153,11 +159,11 @@ module.exports = grammar({
       repeat($.data_alternatives)
     ),
 
-    data_alternatives: $ => seq(
+    data_alternatives: $ => prec.right(seq(
       '|',
       $.conid,
       repeat($.field)
-    ),
+    )),
 
     field: $ => choice(
       $.var_type_definition,
