@@ -40,4 +40,9 @@ main :: IO()
 main = putstrLn "Hi"
 }
 
+-- simple comment
+{-
+group comment
+-}
+
 INCLUDE "another.ag"

@@ -1,5 +1,15 @@
+
+const PREC = {
+  COMMENT: 1,
+};
+
 module.exports = grammar({
   name: 'uuag',
+
+  extras: $ => [
+    $.comment,
+    /\s/
+  ],
 
   rules: {
     source_file: $ => repeat($._elem),
@@ -245,5 +255,14 @@ module.exports = grammar({
     type_symbol: $ => choice(':', '::'),
 
     assign_symbol: $ => choice('=', ':='),
+
+    comment: $ => token(prec(PREC.COMMENT, choice(
+      seq('--', /.*/),
+      seq(
+        '{-',
+        /[^-]*\-+([^{}-][^-]*\-+)*/,
+        '}'
+      )
+    ))),
   }
 });
