@@ -9,7 +9,15 @@ module.exports = grammar({
       $.attr_definition,
       $.type_definition,
       $.sem_definition,
-      $.code_block_definition
+      $.code_block_definition,
+      $.include_definition
+    ),
+
+    include_definition: $ => seq(
+      $.include_keyword,
+      '"',
+      $.string_content,
+      '"'
     ),
 
     code_block_definition: $ => seq(
@@ -204,6 +212,8 @@ module.exports = grammar({
     code_block_content: $ => /[^{}]*/,
     // TODO unsupported case: ATTR Tree [ | | value USE { {-} } {0} : Int ]
 
+    string_content: $ => /[^"]*/,
+
     uppercase: $ => /[A-Z]+/,
 
     lowercase: $ => /[a-z]+/,
@@ -225,6 +235,8 @@ module.exports = grammar({
     syn_keyword: $ => choice('SYN', 'syn'),
 
     chn_keyword: $ => choice('CHN', 'chn'),
+
+    include_keyword: $ => choice('INCLUDE', 'include'),
 
     lhs_keyword: $ => 'lhs',
 

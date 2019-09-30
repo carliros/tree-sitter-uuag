@@ -252,6 +252,30 @@
     }
   },
   {
+    "type": "include_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "include_keyword",
+          "named": true
+        },
+        {
+          "type": "string_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "include_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "inh_attr_declaration_new_style",
     "named": true,
     "fields": {},
@@ -526,6 +550,10 @@
           "named": true
         },
         {
+          "type": "include_definition",
+          "named": true
+        },
+        {
           "type": "sem_definition",
           "named": true
         },
@@ -717,6 +745,10 @@
     }
   },
   {
+    "type": "\"",
+    "named": false
+  },
+  {
     "type": "|",
     "named": false
   },
@@ -774,6 +806,10 @@
   },
   {
     "type": "code_block_content",
+    "named": true
+  },
+  {
+    "type": "string_content",
     "named": true
   },
   {
@@ -850,6 +886,14 @@
   },
   {
     "type": "chn",
+    "named": false
+  },
+  {
+    "type": "INCLUDE",
+    "named": false
+  },
+  {
+    "type": "include",
     "named": false
   },
   {

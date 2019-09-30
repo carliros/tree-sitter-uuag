@@ -30,6 +30,31 @@
         {
           "type": "SYMBOL",
           "name": "code_block_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "include_definition"
+        }
+      ]
+    },
+    "include_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "include_keyword"
+        },
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string_content"
+        },
+        {
+          "type": "STRING",
+          "value": "\""
         }
       ]
     },
@@ -716,6 +741,10 @@
       "type": "PATTERN",
       "value": "[^{}]*"
     },
+    "string_content": {
+      "type": "PATTERN",
+      "value": "[^\"]*"
+    },
     "uppercase": {
       "type": "PATTERN",
       "value": "[A-Z]+"
@@ -829,6 +858,19 @@
         {
           "type": "STRING",
           "value": "chn"
+        }
+      ]
+    },
+    "include_keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "INCLUDE"
+        },
+        {
+          "type": "STRING",
+          "value": "include"
         }
       ]
     },

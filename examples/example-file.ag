@@ -39,3 +39,5 @@ SEM Tree
 main :: IO()
 main = putstrLn "Hi"
 }
+
+INCLUDE "another.ag"
