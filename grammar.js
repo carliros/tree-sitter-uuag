@@ -11,6 +11,12 @@ module.exports = grammar({
     /\s/
   ],
 
+  externals: $ => [
+    $._layout_open_brace,
+    $._layout_line_content,
+    $._layout_close_brace
+  ],
+
   rules: {
     source_file: $ => repeat($._elem),
 
@@ -78,8 +84,14 @@ module.exports = grammar({
     ),
 
     expr: $ => choice(
-      $.code_block
-      // TODO give support to $.layout_code_block
+      $.code_block,
+      $.layout_code_block
+    ),
+
+    layout_code_block: $ => seq(
+      $._layout_open_brace,
+      repeat1($._layout_line_content),
+      $._layout_close_brace
     ),
 
     pattern: $ => choice(

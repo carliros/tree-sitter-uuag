@@ -225,6 +225,30 @@
         {
           "type": "SYMBOL",
           "name": "code_block"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "layout_code_block"
+        }
+      ]
+    },
+    "layout_code_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_layout_open_brace"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_layout_line_content"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_layout_close_brace"
         }
       ]
     },
@@ -962,7 +986,20 @@
     }
   ],
   "conflicts": [],
-  "externals": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "_layout_open_brace"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_layout_line_content"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_layout_close_brace"
+    }
+  ],
   "inline": [],
   "supertypes": []
 }

@@ -228,6 +228,10 @@
         {
           "type": "code_block",
           "named": true
+        },
+        {
+          "type": "layout_code_block",
+          "named": true
         }
       ]
     }
@@ -319,6 +323,11 @@
   },
   {
     "type": "inh_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "layout_code_block",
     "named": true,
     "fields": {}
   },

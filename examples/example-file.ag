@@ -34,6 +34,7 @@ SEM Tree
          loc.res@_ = { min dsds }
          loc.(id) = { min dsds }
          loc._ = { min dsds }
+  | Tip  lhs.sum  =  @value
 
 {
 main :: IO()
